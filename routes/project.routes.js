@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const { default: mongoose } = require("mongoose");
 const Project = require('../models/Project.model');
-// const Task = require('../models/Task.model');
+const Task = require('../models/Task.model');
 
 
 // Create new project
