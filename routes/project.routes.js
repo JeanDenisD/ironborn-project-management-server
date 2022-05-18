@@ -71,7 +71,7 @@ router.get('/projects/:projectId', (req, res, next) => {
 
 
 // Updates a specific project by id
-router.put('/projects/:projectId', (req, res, next) => {
+router.put('/projects/:projectId', isAuthenticated, (req, res, next) => {
     const { projectId } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(projectId)) {
@@ -98,7 +98,7 @@ router.put('/projects/:projectId', (req, res, next) => {
 
 
 // Delete a specific project by id
-router.delete('/projects/:projectId', (req, res, next) => {
+router.delete('/projects/:projectId', isAuthenticated, (req, res, next) => {
     const { projectId } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(projectId)) {
